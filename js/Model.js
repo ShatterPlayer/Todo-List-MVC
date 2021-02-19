@@ -42,4 +42,8 @@ class Model {
     this._notifyAboutChanges()
     this._cacheTodos()
   }
+
+  getTodo = id => {
+    return this.todos.find(todo => todo.id === id)
+  }
 }

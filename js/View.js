@@ -90,6 +90,14 @@ class View {
   }
 
   onTodoEdit = handle => {
+    this.todoList.addEventListener('keydown', e => {
+      if (e.target.role == 'todoText') {
+        handle(e)
+      }
+    })
+  }
+
+  onTodoEditEnd = handle => {
     this.todoList.addEventListener('focusout', e => {
       if (e.target.role === 'todoText') {
         handle(e)
